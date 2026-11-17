@@ -1,0 +1,528 @@
+{
+  "dataset_id": "fastapi-diagnostic-zh-v1",
+  "commit_sha": "ca5f60ee72f35fb2134d8b5d26bbb75965bcff66",
+  "language": {
+    "questions": "zh",
+    "sources": "zh"
+  },
+  "purpose": "development_diagnostics_not_holdout",
+  "runtime_executed": false,
+  "model_evaluated": false,
+  "questions": [
+    {
+      "id": "Q01",
+      "type": "answerable",
+      "question_zh": "路径参数声明为 int，传入 abc 会发生什么？",
+      "expected_behavior_zh": "应说明类型校验失败，并指出错误位置属于 path；不编造业务处理成功。",
+      "evidence": [
+        {
+          "doc_id": "D01",
+          "source_path": "docs/zh/docs/tutorial/path-params.md",
+          "section": "数据校验",
+          "line_start": 45,
+          "line_end": 78,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/path-params.md#L45-L78",
+          "code_refs": []
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q02",
+      "type": "answerable",
+      "question_zh": "/users/me 和 /users/{user_id} 为什么可能匹配错？",
+      "expected_behavior_zh": "应说明按声明顺序匹配，固定路径应先注册。",
+      "evidence": [
+        {
+          "doc_id": "D01",
+          "source_path": "docs/zh/docs/tutorial/path-params.md",
+          "section": "顺序很重要",
+          "line_start": 111,
+          "line_end": 130,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/path-params.md#L111-L130",
+          "code_refs": [
+            {
+              "path": "docs_src/path_params/tutorial003_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial003_py310.py"
+            },
+            {
+              "path": "docs_src/path_params/tutorial003b_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial003b_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q03",
+      "type": "answerable",
+      "question_zh": "查询参数没有默认值，客户端不传会怎样？",
+      "expected_behavior_zh": "应说明必填与缺失校验错误。",
+      "evidence": [
+        {
+          "doc_id": "D02",
+          "source_path": "docs/zh/docs/tutorial/query-params.md",
+          "section": "必选查询参数",
+          "line_start": 123,
+          "line_end": 188,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params.md#L123-L188",
+          "code_refs": [
+            {
+              "path": "docs_src/query_params/tutorial005_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial005_py310.py"
+            },
+            {
+              "path": "docs_src/query_params/tutorial006_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial006_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q04",
+      "type": "answerable",
+      "question_zh": "short: bool 收到 ?short=yes 时得到什么？",
+      "expected_behavior_zh": "应说明转换为 True；本题不扩展到任意未知字符串。",
+      "evidence": [
+        {
+          "doc_id": "D02",
+          "source_path": "docs/zh/docs/tutorial/query-params.md",
+          "section": "查询参数类型转换",
+          "line_start": 74,
+          "line_end": 112,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params.md#L74-L112",
+          "code_refs": [
+            {
+              "path": "docs_src/query_params/tutorial003_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial003_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q05",
+      "type": "answerable",
+      "question_zh": "接口同时接收路径中的 item_id、普通字符串 q 和 Pydantic 模型 item，分别从哪里取值？",
+      "expected_behavior_zh": "在没有其他显式声明时，分别来自路径、查询和请求体。",
+      "evidence": [
+        {
+          "doc_id": "D03",
+          "source_path": "docs/zh/docs/tutorial/body.md",
+          "section": "请求体 + 路径 + 查询参数",
+          "line_start": 138,
+          "line_end": 161,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/body.md#L138-L161",
+          "code_refs": [
+            {
+              "path": "docs_src/body/tutorial004_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body/tutorial004_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q06",
+      "type": "answerable",
+      "question_zh": "q: str | None = None 为什么可以不传？仅写 str | None 就一定可以省略吗？",
+      "expected_behavior_zh": "应区分允许 None 的类型与默认值决定的可省略性，不把两者混为一谈。",
+      "evidence": [
+        {
+          "doc_id": "D03",
+          "source_path": "docs/zh/docs/tutorial/body.md",
+          "section": "请求体 + 路径 + 查询参数",
+          "line_start": 138,
+          "line_end": 161,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/body.md#L138-L161",
+          "code_refs": [
+            {
+              "path": "docs_src/body/tutorial004_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body/tutorial004_py310.py"
+            }
+          ]
+        },
+        {
+          "doc_id": "D04",
+          "source_path": "docs/zh/docs/tutorial/query-params-str-validations.md",
+          "section": "必填，但可以为 `None`",
+          "line_start": 222,
+          "line_end": 229,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params-str-validations.md#L222-L229",
+          "code_refs": [
+            {
+              "path": "docs_src/query_params_str_validations/tutorial006c_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial006c_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q07",
+      "type": "answerable",
+      "question_zh": "怎样让查询参数 q 可以省略，但传入时最多 50 个字符？",
+      "expected_behavior_zh": "应包含 Query(max_length=50) 与默认值 None；示例不得重复指定冲突默认值。",
+      "evidence": [
+        {
+          "doc_id": "D04",
+          "source_path": "docs/zh/docs/tutorial/query-params-str-validations.md",
+          "section": "在 `q` 的 `Annotated` 中添加 `Query`",
+          "line_start": 64,
+          "line_end": 85,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params-str-validations.md#L64-L85",
+          "code_refs": [
+            {
+              "path": "docs_src/query_params_str_validations/tutorial002_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial002_an_py310.py"
+            }
+          ]
+        },
+        {
+          "doc_id": "D04",
+          "source_path": "docs/zh/docs/tutorial/query-params-str-validations.md",
+          "section": "在默认值中使用 `Query` 或在 `Annotated` 中使用 `Query`",
+          "line_start": 124,
+          "line_end": 149,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params-str-validations.md#L124-L149",
+          "code_refs": []
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q08",
+      "type": "answerable",
+      "question_zh": "怎样接收 ?q=foo&q=bar 这样的多个同名查询参数？",
+      "expected_behavior_zh": "应使用列表类型并显式声明 Query，说明得到列表。",
+      "evidence": [
+        {
+          "doc_id": "D04",
+          "source_path": "docs/zh/docs/tutorial/query-params-str-validations.md",
+          "section": "查询参数列表 / 多个值",
+          "line_start": 230,
+          "line_end": 303,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params-str-validations.md#L230-L303",
+          "code_refs": [
+            {
+              "path": "docs_src/query_params_str_validations/tutorial011_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial011_an_py310.py"
+            },
+            {
+              "path": "docs_src/query_params_str_validations/tutorial012_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial012_an_py310.py"
+            },
+            {
+              "path": "docs_src/query_params_str_validations/tutorial013_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial013_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q09",
+      "type": "answerable",
+      "question_zh": "如何让一个整数 importance 从 JSON 请求体读取，而不是查询参数？",
+      "expected_behavior_zh": "应说明显式使用 Body，并描述多参数情况下的请求结构。",
+      "evidence": [
+        {
+          "doc_id": "D05",
+          "source_path": "docs/zh/docs/tutorial/body-multiple-params.md",
+          "section": "请求体中的单一值",
+          "line_start": 65,
+          "line_end": 96,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/body-multiple-params.md#L65-L96",
+          "code_refs": [
+            {
+              "path": "docs_src/body_multiple_params/tutorial003_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial003_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q10",
+      "type": "answerable",
+      "question_zh": "只有一个 item 模型，怎样要求请求 JSON 最外层含 item 键？",
+      "expected_behavior_zh": "应说明 Body(embed=True) 并展示或描述嵌套结构。",
+      "evidence": [
+        {
+          "doc_id": "D05",
+          "source_path": "docs/zh/docs/tutorial/body-multiple-params.md",
+          "section": "嵌入单个请求体参数",
+          "line_start": 117,
+          "line_end": 156,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/body-multiple-params.md#L117-L156",
+          "code_refs": [
+            {
+              "path": "docs_src/body_multiple_params/tutorial005_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial005_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q11",
+      "type": "answerable",
+      "question_zh": "工具函数抛出且未被业务代码捕获的 HTTPException 后，调用它的接口函数还会继续正常执行吗？",
+      "expected_behavior_zh": "在题设未捕获异常时，正常执行中断，由框架生成相应错误响应；区分 raise 与 return，不推广成任何被捕获异常都必定结束请求。",
+      "evidence": [
+        {
+          "doc_id": "D06",
+          "source_path": "docs/zh/docs/tutorial/handling-errors.md",
+          "section": "在代码中触发 `HTTPException`",
+          "line_start": 30,
+          "line_end": 43,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/handling-errors.md#L30-L43",
+          "code_refs": [
+            {
+              "path": "docs_src/handling_errors/tutorial001_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial001_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q12",
+      "type": "answerable",
+      "question_zh": "如何自定义请求参数校验失败时返回的响应？",
+      "expected_behavior_zh": "应定位 RequestValidationError 的异常处理器，不把服务端响应校验错误混同为客户端错误。",
+      "evidence": [
+        {
+          "doc_id": "D06",
+          "source_path": "docs/zh/docs/tutorial/handling-errors.md",
+          "section": "覆盖请求验证异常",
+          "line_start": 120,
+          "line_end": 155,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/handling-errors.md#L120-L155",
+          "code_refs": [
+            {
+              "path": "docs_src/handling_errors/tutorial004_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial004_py310.py"
+            }
+          ]
+        },
+        {
+          "doc_id": "D08",
+          "source_path": "docs/zh/docs/tutorial/response-model.md",
+          "section": "响应模型 - 返回类型",
+          "line_start": 1,
+          "line_end": 21,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/response-model.md#L1-L21",
+          "code_refs": [
+            {
+              "path": "docs_src/response_model/tutorial001_01_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial001_01_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q13",
+      "type": "answerable",
+      "question_zh": "Depends(common_parameters) 为什么不是 Depends(common_parameters())？",
+      "expected_behavior_zh": "应传入可调用对象，让 FastAPI 按请求解析参数并调用，再注入返回值。",
+      "evidence": [
+        {
+          "doc_id": "D07",
+          "source_path": "docs/zh/docs/tutorial/dependencies/index.md",
+          "section": "在“dependant”中声明依赖项",
+          "line_start": 68,
+          "line_end": 116,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/dependencies/index.md#L68-L116",
+          "code_refs": [
+            {
+              "path": "docs_src/dependencies/tutorial001_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/dependencies/tutorial001_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q14",
+      "type": "answerable",
+      "question_zh": "多个接口需要同一套分页参数，如何复用解析逻辑？",
+      "expected_behavior_zh": "应说明共用依赖函数及 Depends 注入；可提及 Annotated 别名。",
+      "evidence": [
+        {
+          "doc_id": "D07",
+          "source_path": "docs/zh/docs/tutorial/dependencies/index.md",
+          "section": "共享 `Annotated` 依赖项",
+          "line_start": 117,
+          "line_end": 142,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/dependencies/index.md#L117-L142",
+          "code_refs": [
+            {
+              "path": "docs_src/dependencies/tutorial001_02_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/dependencies/tutorial001_02_an_py310.py"
+            }
+          ]
+        },
+        {
+          "doc_id": "D07",
+          "source_path": "docs/zh/docs/tutorial/dependencies/index.md",
+          "section": "在“dependant”中声明依赖项",
+          "line_start": 68,
+          "line_end": 116,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/dependencies/index.md#L68-L116",
+          "code_refs": [
+            {
+              "path": "docs_src/dependencies/tutorial001_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/dependencies/tutorial001_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q15",
+      "type": "answerable",
+      "question_zh": "返回对象里包含 password，如何让响应只输出公开字段？",
+      "expected_behavior_zh": "应使用不含 password 的输出模型；说明响应模型过滤，而不是断言框架总会自动隐藏密码。",
+      "evidence": [
+        {
+          "doc_id": "D08",
+          "source_path": "docs/zh/docs/tutorial/response-model.md",
+          "section": "添加输出模型",
+          "line_start": 108,
+          "line_end": 131,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/response-model.md#L108-L131",
+          "code_refs": [
+            {
+              "path": "docs_src/response_model/tutorial003_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q16",
+      "type": "answerable",
+      "question_zh": "一个请求能否同时用 File/Form 上传文件，又把 Body 参数当作 application/json 接收？",
+      "expected_behavior_zh": "应说明此声明组合下的编码冲突；可建议把元数据作为表单字段，不声称 multipart 永远不能携带 JSON 文本。",
+      "evidence": [
+        {
+          "doc_id": "D09",
+          "source_path": "docs/zh/docs/tutorial/request-forms-and-files.md",
+          "section": "定义 `File` 与 `Form` 参数",
+          "line_start": 21,
+          "line_end": 38,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/request-forms-and-files.md#L21-L38",
+          "code_refs": [
+            {
+              "path": "docs_src/request_forms_and_files/tutorial001_an_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/request_forms_and_files/tutorial001_an_py310.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q17",
+      "type": "answerable",
+      "question_zh": "怎样测试接口的状态码与 JSON 返回内容？",
+      "expected_behavior_zh": "应说明 TestClient(app)、client 请求和 assert；示例将 JSON 数据作为 json 参数。",
+      "evidence": [
+        {
+          "doc_id": "D10",
+          "source_path": "docs/zh/docs/tutorial/testing.md",
+          "section": "使用 `TestClient`",
+          "line_start": 9,
+          "line_end": 58,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/testing.md#L9-L58",
+          "code_refs": [
+            {
+              "path": "docs_src/app_testing/tutorial001_py310.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/tutorial001_py310.py"
+            }
+          ]
+        },
+        {
+          "doc_id": "D10",
+          "source_path": "docs/zh/docs/tutorial/testing.md",
+          "section": "测试：扩展示例",
+          "line_start": 99,
+          "line_end": 152,
+          "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/testing.md#L99-L152",
+          "code_refs": [
+            {
+              "path": "docs_src/app_testing/app_b_an_py310/main.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/app_b_an_py310/main.py"
+            },
+            {
+              "path": "docs_src/app_testing/app_b_an_py310/test_main.py",
+              "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/app_b_an_py310/test_main.py"
+            }
+          ]
+        }
+      ],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q18",
+      "type": "clarify",
+      "question_zh": "我的 FastAPI 接口报错了，直接告诉我改哪一行。",
+      "expected_behavior_zh": "应先澄清错误详情、最小代码及环境版本；不能虚构行号或确定根因。",
+      "evidence": [],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q19",
+      "type": "out_of_scope",
+      "question_zh": "帮我配置 Kubernetes Ingress，让生产集群自动扩容。",
+      "expected_behavior_zh": "应说明当前选定资料不覆盖该任务；不伪造本知识库中的依据。",
+      "evidence": [],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    },
+    {
+      "id": "Q20",
+      "type": "version_boundary",
+      "question_zh": "这份文档里的写法能保证在所有 FastAPI 和 Pydantic 版本都一样吗？",
+      "expected_behavior_zh": "应拒绝无依据的跨版本保证，说明快照范围并要求目标版本；不得把资料快照当作完整依赖兼容矩阵。",
+      "evidence": [],
+      "status": "development_diagnostic",
+      "runtime_verified": false
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[project]
+name = "fastapi-rag"
+version = "0.1.0"
+description = "FastAPI 中文文档问答助手"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi",
+    "langgraph",
+    "loguru",
+    "pydantic",
+    "pydantic-settings",
+    "uvicorn",
+]
+
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true

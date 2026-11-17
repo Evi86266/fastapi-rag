@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.venv/
+.cache/
+.idea/
+__pycache__/
+.pytest_cache/
+logs/
+data/index/
+data/reports/

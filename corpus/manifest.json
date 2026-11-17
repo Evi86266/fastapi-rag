@@ -1,0 +1,556 @@
+{
+  "repository": "fastapi/fastapi",
+  "release_tag": "0.135.1",
+  "commit_sha": "ca5f60ee72f35fb2134d8b5d26bbb75965bcff66",
+  "retrieved_on": "2026-11-17",
+  "status": "research_sample_not_runtime_verified",
+  "counts": {
+    "documents": 10,
+    "examples": 64,
+    "licenses": 1
+  },
+  "reference_audit": {
+    "occurrences": 82,
+    "uniqueFiles": 64,
+    "errors": []
+  },
+  "files": [
+    {
+      "path": "docs/zh/docs/tutorial/path-params.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "06a9f1b4421a1218541ff4cb57e1db2282482293",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/path-params.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/path-params.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/query-params.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "4ea37d7e0cf2efa0cdf4fc073d9817c479b54f06",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/query-params.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/body.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "4a72ba17c56a1ae463488196c938c255416dbc16",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/body.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/body.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/query-params-str-validations.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "d41f3022672f3216666413ba27d8be6954dbad0b",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/query-params-str-validations.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/query-params-str-validations.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/body-multiple-params.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "39b84904fcf23c1ca818b84adae983aa8df4e0a2",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/body-multiple-params.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/body-multiple-params.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/handling-errors.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "9782f3d225c92009c77fd19036a72371e4c59d1f",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/handling-errors.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/handling-errors.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/dependencies/index.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "7db9ef9d952916b6689c911ed04ca28f56ce9e3e",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/dependencies/index.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/dependencies/index.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/response-model.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "df0afa66f8a9ec0199d7896a640a26ca2925b7a1",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/response-model.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/response-model.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/request-forms-and-files.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "484fcd5d6d99d5822d62214a03fd87ea43271713",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/request-forms-and-files.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/request-forms-and-files.md"
+    },
+    {
+      "path": "docs/zh/docs/tutorial/testing.md",
+      "kind": "document",
+      "language": "zh",
+      "git_blob_sha": "7eb32f19e64b3e6b3fe82d5a2289490dbdb546f0",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs/zh/docs/tutorial/testing.md",
+      "local_path": "corpus/raw/docs/zh/docs/tutorial/testing.md"
+    },
+    {
+      "path": "docs_src/app_testing/app_a_py310/main.py",
+      "kind": "example",
+      "git_blob_sha": "4679aec9cc4c3e293a789444715843ba44e4fbb4",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/app_a_py310/main.py",
+      "local_path": "corpus/raw/docs_src/app_testing/app_a_py310/main.py"
+    },
+    {
+      "path": "docs_src/app_testing/app_a_py310/test_main.py",
+      "kind": "example",
+      "git_blob_sha": "ddc013f40c502b8d1f7f03bb24083ebd7dc50ee4",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/app_a_py310/test_main.py",
+      "local_path": "corpus/raw/docs_src/app_testing/app_a_py310/test_main.py"
+    },
+    {
+      "path": "docs_src/app_testing/app_b_an_py310/main.py",
+      "kind": "example",
+      "git_blob_sha": "1b77dd13799148f485f25d559166fe1560c9056a",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/app_b_an_py310/main.py",
+      "local_path": "corpus/raw/docs_src/app_testing/app_b_an_py310/main.py"
+    },
+    {
+      "path": "docs_src/app_testing/app_b_an_py310/test_main.py",
+      "kind": "example",
+      "git_blob_sha": "4e1c51ecc861d1d6a59c54fb9221272d8e13ee5f",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/app_b_an_py310/test_main.py",
+      "local_path": "corpus/raw/docs_src/app_testing/app_b_an_py310/test_main.py"
+    },
+    {
+      "path": "docs_src/app_testing/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "79a853b487908f379444fcd03c26a89a1a3d0e67",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/app_testing/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/app_testing/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/body/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "b71a52b620336b619f1b9f3d734069f735a52714",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/body/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/body/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "a829a4dc9d60002397e86478c4cd6944ffebe07e",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/body/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/body/tutorial003_py310.py",
+      "kind": "example",
+      "git_blob_sha": "51ac8aafac58a1c605accbf5b629c68a2f4ec47e",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body/tutorial003_py310.py",
+      "local_path": "corpus/raw/docs_src/body/tutorial003_py310.py"
+    },
+    {
+      "path": "docs_src/body/tutorial004_py310.py",
+      "kind": "example",
+      "git_blob_sha": "53b10d97b60cdd8fd203913d03e44a92d9da8b97",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body/tutorial004_py310.py",
+      "local_path": "corpus/raw/docs_src/body/tutorial004_py310.py"
+    },
+    {
+      "path": "docs_src/body_multiple_params/tutorial001_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "2d79c19c2869dd4fb119352cbc0487b4184b80b1",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial001_an_py310.py",
+      "local_path": "corpus/raw/docs_src/body_multiple_params/tutorial001_an_py310.py"
+    },
+    {
+      "path": "docs_src/body_multiple_params/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "2c4eb824c8c6d0b71d0f12c1017a57aeab311e37",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/body_multiple_params/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/body_multiple_params/tutorial003_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "593ff893cab725987abd0dfe743fb2beaf6a7fbe",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial003_an_py310.py",
+      "local_path": "corpus/raw/docs_src/body_multiple_params/tutorial003_an_py310.py"
+    },
+    {
+      "path": "docs_src/body_multiple_params/tutorial004_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "cd5c66fefb2ba79fd7d94c766a30471736224ba2",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial004_an_py310.py",
+      "local_path": "corpus/raw/docs_src/body_multiple_params/tutorial004_an_py310.py"
+    },
+    {
+      "path": "docs_src/body_multiple_params/tutorial005_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "f97680ba01a36dffdb2de0f346a1b0fe50edd474",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/body_multiple_params/tutorial005_an_py310.py",
+      "local_path": "corpus/raw/docs_src/body_multiple_params/tutorial005_an_py310.py"
+    },
+    {
+      "path": "docs_src/dependencies/tutorial001_02_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "f59637bb23f2f9e85ce47f1452953cf91707de92",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/dependencies/tutorial001_02_an_py310.py",
+      "local_path": "corpus/raw/docs_src/dependencies/tutorial001_02_an_py310.py"
+    },
+    {
+      "path": "docs_src/dependencies/tutorial001_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "f2e57ae7b84f60bb2dc92bead26c621cd8907f87",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/dependencies/tutorial001_an_py310.py",
+      "local_path": "corpus/raw/docs_src/dependencies/tutorial001_an_py310.py"
+    },
+    {
+      "path": "docs_src/handling_errors/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "e5f32aac29e33ea8861bdf76e63977b4654d5789",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/handling_errors/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/handling_errors/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "e48c295c9c2691ad7be1c1247c1c4c494435aef6",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/handling_errors/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/handling_errors/tutorial003_py310.py",
+      "kind": "example",
+      "git_blob_sha": "791cd6838c5ba128a0d4726dd3ed688add045ac5",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial003_py310.py",
+      "local_path": "corpus/raw/docs_src/handling_errors/tutorial003_py310.py"
+    },
+    {
+      "path": "docs_src/handling_errors/tutorial004_py310.py",
+      "kind": "example",
+      "git_blob_sha": "ae50807e973361c26b9ab53b8836326177b66023",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial004_py310.py",
+      "local_path": "corpus/raw/docs_src/handling_errors/tutorial004_py310.py"
+    },
+    {
+      "path": "docs_src/handling_errors/tutorial005_py310.py",
+      "kind": "example",
+      "git_blob_sha": "0e04fa086405056103e5f696a0ae7862c23551a1",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial005_py310.py",
+      "local_path": "corpus/raw/docs_src/handling_errors/tutorial005_py310.py"
+    },
+    {
+      "path": "docs_src/handling_errors/tutorial006_py310.py",
+      "kind": "example",
+      "git_blob_sha": "e05160d7e167f5e8135bd3bb1f3f7cc25a3ba8eb",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/handling_errors/tutorial006_py310.py",
+      "local_path": "corpus/raw/docs_src/handling_errors/tutorial006_py310.py"
+    },
+    {
+      "path": "docs_src/path_params/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "7bbf70e6c8275d7436a73d0e1d2e0631fe7d65dc",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/path_params/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/path_params/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "8272ad70d4f065ba13824e3f4c9cd2529ae5c781",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/path_params/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/path_params/tutorial003_py310.py",
+      "kind": "example",
+      "git_blob_sha": "5f0aa09234cd609383884a18f519e433ed758b0b",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial003_py310.py",
+      "local_path": "corpus/raw/docs_src/path_params/tutorial003_py310.py"
+    },
+    {
+      "path": "docs_src/path_params/tutorial003b_py310.py",
+      "kind": "example",
+      "git_blob_sha": "822d3736949a028e627523703433f497241d6a93",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial003b_py310.py",
+      "local_path": "corpus/raw/docs_src/path_params/tutorial003b_py310.py"
+    },
+    {
+      "path": "docs_src/path_params/tutorial004_py310.py",
+      "kind": "example",
+      "git_blob_sha": "2961e6178e7a6b45d1341f6ea2788bacc3685d85",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial004_py310.py",
+      "local_path": "corpus/raw/docs_src/path_params/tutorial004_py310.py"
+    },
+    {
+      "path": "docs_src/path_params/tutorial005_py310.py",
+      "kind": "example",
+      "git_blob_sha": "9a24a4963a1884f1c579ca09f49773968feac2c6",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/path_params/tutorial005_py310.py",
+      "local_path": "corpus/raw/docs_src/path_params/tutorial005_py310.py"
+    },
+    {
+      "path": "docs_src/query_params/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "74e1a176048537c8d18b6c258add514bd67bb6c1",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/query_params/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "bedb58ce89b8bf3bbaedf7ac81aac13517b3833a",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/query_params/tutorial003_py310.py",
+      "kind": "example",
+      "git_blob_sha": "1eec66d90a74b2e389b9ef7daea2fade94caa583",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial003_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params/tutorial003_py310.py"
+    },
+    {
+      "path": "docs_src/query_params/tutorial004_py310.py",
+      "kind": "example",
+      "git_blob_sha": "8ec4338dff3bda16fae130708015dd39990d0de2",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial004_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params/tutorial004_py310.py"
+    },
+    {
+      "path": "docs_src/query_params/tutorial005_py310.py",
+      "kind": "example",
+      "git_blob_sha": "e16a40574dce705d121bc64585a21ffa537a185b",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial005_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params/tutorial005_py310.py"
+    },
+    {
+      "path": "docs_src/query_params/tutorial006_py310.py",
+      "kind": "example",
+      "git_blob_sha": "be2a44c3157a230fa328d436904c75ad2c4d7234",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params/tutorial006_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params/tutorial006_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "eeefddfa753f6e2f7e5265437eb56ce08c78f818",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial002_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "66ee7451b0d2f10fbe68e5cdbb17ed1d3b4d3a6a",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial002_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial002_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "f15351d290ee920358109d4e3bfa91243aa78358",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial003_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "79a604b6ce9355f6d94e362a0ccc4bc36f5e36a4",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial003_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial003_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial004_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "20cf1988fdd8a0614f9fb2f4bdaefef5866ce87c",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial004_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial004_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial005_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "b1f6046b5084a6842acf832043372a563dbea66c",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial005_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial005_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial006_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "3b4a676d2e388df2f7d8ae5e9db7e5a77abc4927",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial006_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial006_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial006c_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "2995d9c9798d677f8e2c3a78639f1921f7e41da0",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial006c_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial006c_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial007_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "ef18e500d6cb3e688d7e8497b7c70502a6148558",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial007_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial007_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial008_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "44b3082b63bada3e26d32846c480af1257a4a8a4",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial008_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial008_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial009_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "d11753362b4c044c6d19c203b64603932ea087f6",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial009_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial009_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial010_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "775095bda86ae8d0296d961eadc1e164d7016756",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial010_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial010_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial011_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "5dad4bfde16d31ad9fbe83500d58aaccef65ccd6",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial011_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial011_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial012_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "9b5a9c2fb2394f7c110e8d6dc194ffd63e2b82c9",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial012_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial012_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial013_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "602734145d4a6f1086a6be5728c21cc63d827630",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial013_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial013_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial014_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "e728dbdb597f717356f1fe16a5f3b79312209ca8",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial014_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial014_an_py310.py"
+    },
+    {
+      "path": "docs_src/query_params_str_validations/tutorial015_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "35f3680949ae468a43e78b6d459af52de2f6c5d9",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/query_params_str_validations/tutorial015_an_py310.py",
+      "local_path": "corpus/raw/docs_src/query_params_str_validations/tutorial015_an_py310.py"
+    },
+    {
+      "path": "docs_src/request_forms_and_files/tutorial001_an_py310.py",
+      "kind": "example",
+      "git_blob_sha": "12cc43e50a01007fed24fe8b9e4217b6421ea2d5",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/request_forms_and_files/tutorial001_an_py310.py",
+      "local_path": "corpus/raw/docs_src/request_forms_and_files/tutorial001_an_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial001_01_py310.py",
+      "kind": "example",
+      "git_blob_sha": "7951c10761e6cce7ba1295bd6a5f734a8ddfa120",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial001_01_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial001_01_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial001_py310.py",
+      "kind": "example",
+      "git_blob_sha": "f8a2aa9fcae53c15fc71a09bcca0ae628390468c",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial001_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial001_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial002_py310.py",
+      "kind": "example",
+      "git_blob_sha": "0a91a5967f816c7aef34d0f9cbf1524a30533e4f",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial002_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial002_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial003_01_py310.py",
+      "kind": "example",
+      "git_blob_sha": "6ffddfd0af6a0f56e5ce45418380ef45855b2ab5",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_01_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial003_01_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial003_02_py310.py",
+      "kind": "example",
+      "git_blob_sha": "df6a09646de2c0a8dce83cc34a324aa78821cc39",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_02_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial003_02_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial003_03_py310.py",
+      "kind": "example",
+      "git_blob_sha": "0d4bd8de57da331940460136db32c2f4ef359377",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_03_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial003_03_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial003_04_py310.py",
+      "kind": "example",
+      "git_blob_sha": "cee49b83e044afea722de78a5c03641a5b0d80cf",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_04_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial003_04_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial003_05_py310.py",
+      "kind": "example",
+      "git_blob_sha": "f1c0f8e126f226d0882e142ff72214f32ae458a0",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_05_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial003_05_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial003_py310.py",
+      "kind": "example",
+      "git_blob_sha": "3703bf888a605ed826ee489c0d3ce4719b837d43",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial003_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial003_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial004_py310.py",
+      "kind": "example",
+      "git_blob_sha": "a3e21b4342b525040a53d1e99bbdafbe6a44dded",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial004_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial004_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial005_py310.py",
+      "kind": "example",
+      "git_blob_sha": "acb3035b9230c56c286d2fae040e1bf8335cf3f7",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial005_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial005_py310.py"
+    },
+    {
+      "path": "docs_src/response_model/tutorial006_py310.py",
+      "kind": "example",
+      "git_blob_sha": "9ccec324e87b98d2f02f2cf31db12a5241fa307b",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/docs_src/response_model/tutorial006_py310.py",
+      "local_path": "corpus/raw/docs_src/response_model/tutorial006_py310.py"
+    },
+    {
+      "path": "LICENSE",
+      "kind": "license",
+      "git_blob_sha": "3e92463e6bd522a2a21e5f0a80d8089d6c4be20d",
+      "source_url": "https://github.com/fastapi/fastapi/blob/ca5f60ee72f35fb2134d8b5d26bbb75965bcff66/LICENSE",
+      "local_path": "corpus/raw/LICENSE"
+    }
+  ],
+  "example_snapshot_retrieved_on": "2026-11-16",
+  "document_language": "zh"
+}
