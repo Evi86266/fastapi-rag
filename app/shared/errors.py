@@ -39,3 +39,10 @@ class ResourceClosedError(AppError):
     """执行器已经关闭，不再接收新任务。"""
 
     code = "resource_closed"
+
+
+class ExternalError(AppError):
+    """外部能力受控错误；detail 仅允许模块名/字段名，不传原始响应。"""
+    def __init__(self, code, detail):
+        self.code=code
+        super().__init__(f"{code}: {detail}")
