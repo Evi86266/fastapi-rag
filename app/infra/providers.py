@@ -4,10 +4,16 @@
 → 停止接收任务 → 等待真实线程完成 → 逐个释放实例。接口只读取快照，不触发外部调用。
 SDK 仅在后台 start 时导入；请求读取缓存状态，不触发生成调用。
 """
+from __future__ import annotations
+
 import asyncio
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Callable, Protocol
+from typing import Any, Callable, Protocol, TYPE_CHECKING
+from threading import RLock
+
+if TYPE_CHECKING:
+    from langchain_openai import ChatOpenAI
 
 from app.shared.config.runtime_config import env_bool
 from app.shared.runtime.resources import BoundedExecutor
@@ -54,27 +60,24 @@ def default_dependencies() -> tuple[DependencySpec, ...]:
     可选功能关闭不阻塞就绪；用户显式开启时，该功能成为本次运行的必需依赖。
     活动索引独立保留 T05 门槛，不以数据库在线代替有效知识库。
     """
-    from app.infra.models.embedding import BgeEmbedding
-    from app.infra.models.reranker import BgeReranker
-    from app.infra.models.qwen import QwenClient
     from app.infra.storage.milvus import MilvusStore
     enabled = env_bool("EXTERNAL_ENABLED", True)
     rerank = env_bool("RERANK_ENABLED", False)
     history = env_bool("HISTORY_ENABLED", False)
     archive = env_bool("CORPUS_ARCHIVE_ENABLED", False)
     return (
-        DependencySpec("embedding", True, factory=BgeEmbedding if enabled else None, pending_reason="external_disabled"),
+        DependencySpec("embedding", True, factory=(lambda: llm_provider._adapter("embedding")) if enabled else None, pending_reason="external_disabled"),
         DependencySpec("milvus", True, factory=MilvusStore if enabled else None, pending_reason="external_disabled"),
-        DependencySpec("qwen", True, factory=QwenClient if enabled else None, pending_reason="external_disabled"),
+        DependencySpec("qwen", True, factory=(lambda: llm_provider._adapter("qwen")) if enabled else None, pending_reason="external_disabled"),
         DependencySpec("active_index", True, pending_reason="pending_t05_active_index"),
-        DependencySpec("reranker", rerank, enabled=rerank, factory=BgeReranker if enabled else None, pending_reason="external_disabled"),
+        DependencySpec("reranker", rerank, enabled=rerank, factory=(lambda: llm_provider._adapter("reranker")) if enabled else None, pending_reason="external_disabled"),
         DependencySpec("history", history, enabled=history, pending_reason="feature_not_implemented"),
         DependencySpec("archive", archive, enabled=archive, pending_reason="feature_not_implemented"),
     )
 
 
 class Providers:
-    """单应用实例拥有唯一资源集合与单线程容量；不构造进程级全局客户端。
+    """单应用生命周期管理资源与单线程容量；默认模型复用 llm_provider 的实例。
 
     仅在事件循环中更新状态。工作线程可写实例注册表，关闭前先等线程完成，
     避免取消等待时遗失刚创建的模型或连接。探测失败可在下一轮恢复。
@@ -207,8 +210,76 @@ class Providers:
             await self._executor.aclose()
             for name, instance in reversed(list(self._instances.items())):
                 try:
-                    await asyncio.to_thread(instance.close)
+                    await _close_dependency(instance)
                 except Exception:
                     self.shutdown_errors.append(name)
             self._instances.clear()
             self._phase = "closed"
+
+
+async def _close_dependency(instance) -> None:
+    """同一收尾入口兼容同步模型及 ChatOpenAI 的异步连接，不遗漏 ainvoke 资源。"""
+    close_async = getattr(instance, "aclose", None)
+    if close_async is not None:
+        await close_async()
+    else:
+        await asyncio.to_thread(instance.close)
+
+
+class LLMProvider:
+    """模型统一门面：懒建适配器 → 复用模型/聊天客户端 → 转发已有编码逻辑。
+
+    单例在导入时只创建容器，不读环境、不加载模型、不请求网络。
+    默认应用生命周期与同步门面共用适配器，业务无需再绑定 Providers。
+    同步编码应在同步业务或受限线程中执行；异步聊天使用 chat().ainvoke()。
+    """
+
+    def __init__(self):
+        self._adapters: dict[str, ManagedDependency] = {}
+        self._lock = RLock()
+
+    def _adapter(self, name: str):
+        """单进程只构造一份对应适配器，供门面和应用启动层共用。"""
+        with self._lock:
+            if name not in self._adapters:
+                from app.infra.models.embedding import BgeEmbedding
+                from app.infra.models.reranker import BgeReranker
+                from app.infra.models.qwen import QwenClient
+                factories = {"embedding": BgeEmbedding, "reranker": BgeReranker, "qwen": QwenClient}
+                self._adapters[name] = factories[name]()
+            return self._adapters[name]
+
+    def chat(self, model: str | None = None, json_mode: bool = False) -> ChatOpenAI:
+        """获取可 invoke/ainvoke 的 ChatOpenAI；model 为空用配置默认值。
+
+        json_mode=True 配置 JSON 对象输出；费用保护由同一适配器回调执行。
+        当前保留非流式边界，未核价模型由底层明确拒绝。
+        """
+        return self._adapter("qwen").chat(model=model, json_mode=json_mode)
+
+    def embedding_model(self) -> Any:
+        """获取复用的本地 BGE-M3 实例，首次访问时由原适配器加载。"""
+        return self._adapter("embedding").get_model()
+
+    def reranker_model(self) -> Any:
+        """获取复用的本地重排模型；显式调用表示主动请求加载该可选能力。"""
+        return self._adapter("reranker").get_model()
+
+    def embed_documents(self, texts: list[str]) -> dict:
+        """生成文档向量字典：dense_vecs 与 lexical_weights 按输入顺序对应。
+
+        复用原适配器的长度校验、编码和结果检查，只将 EncodedText 转成统一字典。
+        """
+        adapter = self._adapter("embedding")
+        adapter.get_model()
+        encoded = adapter.encode_documents(texts)
+        return {"dense_vecs": [item.dense for item in encoded],
+                "lexical_weights": [item.sparse for item in encoded]}
+
+    async def aclose(self) -> None:
+        """独立脚本的显式收尾；应用内由原 Providers 生命周期关闭同一组实例。"""
+        for adapter in reversed(list(self._adapters.values())):
+            await _close_dependency(adapter)
+
+
+llm_provider = LLMProvider()
